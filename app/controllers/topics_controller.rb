@@ -8,6 +8,11 @@ class TopicsController < ApplicationController
     redirect_to root_path
   end
 
+  def destroy
+    Topic.delete params[:id]
+    redirect_to root_path
+  end
+
   private
   def topic_params
     params.require(:topic).permit(:title)

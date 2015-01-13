@@ -2,7 +2,10 @@
 
 <ul>
   <% @topics.each do |t| %>
-    <li><%= t.title %></li>
+    <li>
+      <%= t.title %>
+      <%= link_to "[x]", topic_path(t), method: :delete %>
+    </li>
   <% end %>
 </ul>
 

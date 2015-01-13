@@ -15,4 +15,11 @@ class TopicsControllerTest < ActionController::TestCase
     assert_not_nil @topic
     assert_equal @topic.title, "blah"
   end
+
+  test "delete topic" do
+    @topic = Topic.first
+    delete :destroy, { id: @topic.id }
+    assert_redirected_to root_path
+    assert_not Topic.exists? @topic.id
+  end
 end
