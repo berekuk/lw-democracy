@@ -1,6 +1,6 @@
 <p>
-<% if session[:current_username] %>
-  You are <%= session[:current_username] %>.
+<% if current_user %>
+  You are <%= current_user %>.
 <% end %>
 </p>
 
