@@ -1,0 +1,10 @@
+<p>
+<% if session[:current_username] %>
+  You are <%= session[:current_username] %>.
+<% end %>
+</p>
+
+<header>Username?</header>
+<%= form_for :user, url: users_path do |f| %>
+  <% f.text_field :username %>
+<% end %>
