@@ -18,4 +18,12 @@ class UsersControllerTest < ActionController::TestCase
     assert_redirected_to root_path
     assert_equal session[:current_username], "blah"
   end
+
+  test "logout" do
+    post :create, { user: { username: "zzz" } }
+    assert_redirected_to root_path
+    assert_equal session[:current_username], "zzz"
+    post :logout
+    assert_redirected_to root_path
+    assert_nil session[:current_username]
 end

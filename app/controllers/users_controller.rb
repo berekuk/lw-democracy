@@ -10,4 +10,9 @@ class UsersController < ApplicationController
 
     redirect_to root_path
   end
+
+  def logout
+    session.delete :current_username
+    redirect_to root_path
+  end
 end

@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :users, only: [:create]
+
+  resources :users, only: [:create] do
+    post 'logout', on: :collection
+  end
+
   resources :topics, only: [:index, :create, :destroy]
 
   root 'topics#index'

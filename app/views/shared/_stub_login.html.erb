@@ -1,10 +1,10 @@
 <p>
 <% if current_user %>
-  You are <%= current_user %>.
+  You are <%= current_user %>. <%= link_to "Logout?", logout_users_path, method: :post %>
 <% end %>
 </p>
 
-<header>Username?</header>
+<header>Username</header>
 <%= form_for :user, url: users_path do |f| %>
   <% f.text_field :username %>
 <% end %>
